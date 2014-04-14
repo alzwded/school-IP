@@ -6,13 +6,15 @@ object IPContactsForm: TIPContactsForm
   Caption = 'IPContactsForm'
   ClientHeight = 582
   ClientWidth = 605
+  OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   LCLVersion = '0.9.30.4'
   object DBGrid1: TDBGrid
     Left = 24
     Height = 375
-    Top = 17
+    Top = 16
     Width = 552
+    Anchors = [akTop, akLeft, akRight, akBottom]
     AutoEdit = False
     AutoFillColumns = True
     Color = clWindow
@@ -26,9 +28,30 @@ object IPContactsForm: TIPContactsForm
     Height = 25
     Top = 392
     Width = 552
+    Anchors = [akLeft, akRight, akBottom]
     Caption = 'Details'
     OnClick = Button1Click
     TabOrder = 1
+  end
+  object Button2: TButton
+    Left = 24
+    Height = 25
+    Top = 424
+    Width = 288
+    Anchors = [akLeft, akBottom]
+    Caption = 'Add'
+    OnClick = Button2Click
+    TabOrder = 2
+  end
+  object Button3: TButton
+    Left = 320
+    Height = 25
+    Top = 424
+    Width = 256
+    Anchors = [akRight, akBottom]
+    Caption = 'Delete'
+    OnClick = Button3Click
+    TabOrder = 3
   end
   object SQLite3Connection1: TSQLite3Connection
     Connected = True

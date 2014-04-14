@@ -33,6 +33,8 @@ type
     BitBtn2: TBitBtn;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
   private
     initialKeys: TStringList;
     { private declarations }
@@ -42,6 +44,9 @@ type
     function GetDeletedKeys: TStringArray;
     function GetModifiedDetails: TKeyValueArray;
     function GetNewDetails: TKeyValueArray;
+    function GetFirstName: string;
+    function GetLastName: string;
+    function GetBirthday: TDate;
   end;
 
 var
@@ -50,6 +55,22 @@ var
 implementation
 
 {$R *.lfm}
+
+function TEditForm.GetFirstName: string;
+begin
+  GetFirstName := Edit1.Text;
+end;
+
+function TEditForm.GetLastName: string;
+begin
+  GetLastName := Edit2.Text;
+end;
+
+function TEditForm.GetBirthday: TDate;
+begin
+  GetBirthday := DateEdit1.Date;
+end;
+
 
 function TEditForm.GetDeletedKeys: TStringArray;
 var
@@ -125,6 +146,35 @@ begin
   end;
 
   StringGrid1.RowCount := StringGrid1.RowCount - 1;
+end;
+
+procedure TEditForm.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+begin
+end;
+
+procedure TEditForm.FormCloseQuery(Sender: TObject; var CanClose: boolean);
+var
+  list: TStringList;
+  i: integer;
+  can: boolean;
+begin
+  if ModalResult = mrCancel then exit;
+  // check for duplicates
+  can := true;
+  list := TStringList.Create;
+  list.Sorted := True;
+  list.Duplicates:=dupError;
+  try
+    for i := StringGrid1.FixedRows to StringGrid1.RowCount - 1 do begin
+      writeln(StringGrid1.Cells[0, i]);
+      list.Add(StringGrid1.Cells[0, i]);
+    end;
+  except
+    on EStringListError do can := false
+  end;
+  list.Free;
+  writeln(can);
+  CanClose := can;
 end;
 
 { TEditForm }

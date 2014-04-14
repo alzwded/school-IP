@@ -1,11 +1,13 @@
 object EditForm: TEditForm
   Left = 236
-  Height = 349
+  Height = 395
   Top = 154
-  Width = 379
+  Width = 468
   Caption = 'EditForm1'
-  ClientHeight = 349
-  ClientWidth = 379
+  ClientHeight = 395
+  ClientWidth = 468
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
   LCLVersion = '0.9.30.4'
   object Label1: TLabel
     Left = 15
@@ -43,7 +45,8 @@ object EditForm: TEditForm
     Left = 120
     Height = 28
     Top = 8
-    Width = 240
+    Width = 329
+    Anchors = [akTop, akLeft, akRight]
     TabOrder = 0
     Text = 'Edit1'
   end
@@ -51,7 +54,8 @@ object EditForm: TEditForm
     Left = 120
     Height = 28
     Top = 48
-    Width = 240
+    Width = 329
+    Anchors = [akTop, akLeft, akRight]
     TabOrder = 1
     Text = 'Edit1'
   end
@@ -59,12 +63,13 @@ object EditForm: TEditForm
     Left = 120
     Height = 28
     Top = 88
-    Width = 216
+    Width = 305
     CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
     OKCaption = 'OK'
     CancelCaption = 'Cancel'
     DateOrder = doNone
     ButtonWidth = 23
+    Anchors = [akTop, akLeft, akRight]
     CharCase = ecNormal
     Glyph.Data = {
       36040000424D3604000000000000360000002800000010000000100000000100
@@ -108,63 +113,68 @@ object EditForm: TEditForm
   end
   object StringGrid1: TStringGrid
     Left = 18
-    Height = 100
+    Height = 181
     Top = 158
-    Width = 344
+    Width = 433
+    Anchors = [akTop, akLeft, akRight, akBottom]
     AutoFillColumns = True
     ColCount = 2
     Columns = <    
       item
         Title.Caption = 'Title'
-        Width = 163
+        Width = 215
       end    
       item
         Title.Caption = 'Title'
-        Width = 163
+        Width = 216
       end>
     FixedCols = 0
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goRowSelect, goSmoothScroll]
     TabOrder = 3
     TitleStyle = tsNative
     ColWidths = (
-      163
-      163
+      215
+      216
     )
   end
   object BitBtn1: TBitBtn
-    Left = 189
+    Left = 294
     Height = 30
-    Top = 312
+    Top = 355
     Width = 75
+    Anchors = [akRight, akBottom]
     Caption = 'OK'
     Default = True
     ModalResult = 1
     TabOrder = 4
   end
   object BitBtn2: TBitBtn
-    Left = 285
+    Left = 374
     Height = 30
-    Top = 312
+    Top = 355
     Width = 75
+    Anchors = [akRight, akBottom]
     Cancel = True
     Caption = 'Cancel'
     ModalResult = 2
     TabOrder = 5
   end
   object Button1: TButton
-    Left = 18
+    Left = 15
     Height = 25
-    Top = 264
+    Top = 347
     Width = 75
+    Anchors = [akLeft, akBottom]
     Caption = '+'
     OnClick = Button1Click
     TabOrder = 6
   end
   object Button2: TButton
-    Left = 104
+    Left = 96
     Height = 25
-    Top = 264
+    Top = 347
     Width = 75
+    Anchors = [akLeft, akBottom]
     Caption = '-'
     OnClick = Button2Click
     TabOrder = 7
