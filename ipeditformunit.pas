@@ -182,6 +182,7 @@ procedure TEditForm.SetData(FirstName, LastName: string; DateOfBirth: TDate; Fie
 var
   i: integer;
 begin
+  Caption := 'Details of ' + FirstName + ' ' + LastName;
   Edit1.Text := FirstName;
   Edit2.Text := LastName;
   DateEdit1.Text := DateToStr(DateOfBirth);
