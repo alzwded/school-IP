@@ -1,0 +1,8 @@
+object IPContactsForm: TIPContactsForm
+  Left = 250
+  Height = 240
+  Top = 250
+  Width = 320
+  Caption = 'IPContactsForm'
+  LCLVersion = '0.9.30.4'
+end
