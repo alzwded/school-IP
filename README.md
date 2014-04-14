@@ -3,6 +3,8 @@ school-IP
 
 IP homework thingy
 
+this project lives at http://github.com/alzwded/school-IP
+
 Building
 ========
 
