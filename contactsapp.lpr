@@ -7,7 +7,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, IPContactsFormUnit
+  Forms, IPContactsFormUnit, IPEditFormUnit
   { you can add units after this };
 
 {$R *.res}
@@ -15,6 +15,7 @@ uses
 begin
   Application.Initialize;
   Application.CreateForm(TIPContactsForm, IPContactsForm);
+  Application.CreateForm(TEditForm, EditForm1);
   Application.Run;
 end.
 

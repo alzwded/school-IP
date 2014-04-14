@@ -2,10 +2,10 @@ DELETE FROM names ;
 DELETE FROM metadata ;
 
 INSERT INTO names
-    ( first_name, last_name, date_of_birth )
+    ( id, first_name, last_name, date_of_birth )
     VALUES
-    ( 'ion' , 'popescu' , DATE('1990-01-13') ),
-    ( 'george' , 'ionescu' , DATE('1991-04-01') )
+    ( 1, 'ion' , 'popescu' , DATE('1990-01-13') ),
+    ( 2, 'george' , 'ionescu' , DATE('1991-04-01') )
     ;
 
 INSERT INTO metadata

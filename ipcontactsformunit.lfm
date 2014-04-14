@@ -1,8 +1,65 @@
 object IPContactsForm: TIPContactsForm
-  Left = 250
-  Height = 240
-  Top = 250
-  Width = 320
+  Left = 243
+  Height = 582
+  Top = 336
+  Width = 605
   Caption = 'IPContactsForm'
+  ClientHeight = 582
+  ClientWidth = 605
+  OnCreate = FormCreate
   LCLVersion = '0.9.30.4'
+  object DBGrid1: TDBGrid
+    Left = 24
+    Height = 119
+    Top = 17
+    Width = 552
+    AutoEdit = False
+    AutoFillColumns = True
+    Color = clWindow
+    Columns = <>
+    DataSource = Datasource1
+    TabOrder = 0
+    OnDblClick = DBGrid1DblClick
+  end
+  object SQLite3Connection1: TSQLite3Connection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'contacts.sqlite3'
+    KeepConnection = True
+    Transaction = SQLTransaction1
+    HostName = 'localhost'
+    LogEvents = []
+    Options = []
+    left = 40
+    top = 481
+  end
+  object Datasource1: TDatasource
+    DataSet = SQLQuery1
+    OnDataChange = Datasource1DataChange
+    left = 122
+    top = 481
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <>
+    Database = SQLite3Connection1
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select'
+      '       id as ''ID'' ,'
+      '       first_name as ''First Name'' ,'
+      '       last_name as ''Last Name'' ,'
+      '       date_of_birth as ''Birthday'''
+      '       from names ;'
+    )
+    Params = <>
+    left = 200
+    top = 491
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = True
+    Action = caNone
+    Database = SQLite3Connection1
+    left = 296
+    top = 491
+  end
 end
