@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS metadata (
     FOREIGN KEY (id) REFERENCES names(id) ON DELETE CASCADE,
     PRIMARY KEY (id, metadata_type)
     );
+-- apparently ON DELETE CASCADE doesn't actually deliver...
 CREATE TRIGGER IF NOT EXISTS purge_metadata BEFORE DELETE ON names
     FOR EACH ROW BEGIN
         DELETE FROM metadata WHERE metadata.id = old.id;
