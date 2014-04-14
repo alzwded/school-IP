@@ -186,7 +186,7 @@ begin
   q.DataBase := SQLite3Connection1;
   q.Transaction := SQLTransaction1;
   q.SQL.Clear;
-  q.SQL.Add('insert into names ( first_name ) values ('''') ; ');
+  q.SQL.Add('insert into names default values ; ');
   q.Active := False;
   q.ExecSQL;
 
