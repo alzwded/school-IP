@@ -50,7 +50,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="59" Y="17"/>
-        <UsageCount Value="32"/>
+        <UsageCount Value="33"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -59,11 +59,12 @@
         <ComponentName Value="IPContactsForm"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="IPContactsFormUnit"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="168"/>
+        <TopLine Value="118"/>
         <CursorPos X="47" Y="189"/>
-        <UsageCount Value="32"/>
+        <UsageCount Value="33"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -73,12 +74,11 @@
         <ComponentName Value="EditForm"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="IPEditFormUnit"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="173"/>
+        <TopLine Value="174"/>
         <CursorPos X="25" Y="185"/>
-        <UsageCount Value="29"/>
+        <UsageCount Value="30"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit2>
@@ -101,7 +101,7 @@
         <UsageCount Value="10"/>
       </Unit4>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="29" HistoryIndex="28">
       <Position1>
         <Filename Value="ipcontactsformunit.pas"/>
         <Caret Line="107" Column="36" TopLine="83"/>
@@ -156,72 +156,68 @@
       </Position13>
       <Position14>
         <Filename Value="ipcontactsformunit.pas"/>
-        <Caret Line="97" Column="17" TopLine="134"/>
+        <Caret Line="98" Column="17" TopLine="98"/>
       </Position14>
       <Position15>
         <Filename Value="ipcontactsformunit.pas"/>
-        <Caret Line="98" Column="17" TopLine="98"/>
+        <Caret Line="99" Column="17" TopLine="99"/>
       </Position15>
       <Position16>
         <Filename Value="ipcontactsformunit.pas"/>
-        <Caret Line="99" Column="17" TopLine="99"/>
+        <Caret Line="139" Column="30" TopLine="134"/>
       </Position16>
       <Position17>
         <Filename Value="ipcontactsformunit.pas"/>
-        <Caret Line="139" Column="30" TopLine="134"/>
+        <Caret Line="167" Column="6" TopLine="141"/>
       </Position17>
       <Position18>
         <Filename Value="ipcontactsformunit.pas"/>
-        <Caret Line="167" Column="6" TopLine="141"/>
+        <Caret Line="180" Column="20" TopLine="154"/>
       </Position18>
       <Position19>
         <Filename Value="ipcontactsformunit.pas"/>
-        <Caret Line="180" Column="20" TopLine="154"/>
+        <Caret Line="177" Column="9" TopLine="159"/>
       </Position19>
       <Position20>
         <Filename Value="ipcontactsformunit.pas"/>
-        <Caret Line="177" Column="9" TopLine="159"/>
+        <Caret Line="181" Column="10" TopLine="159"/>
       </Position20>
       <Position21>
         <Filename Value="ipcontactsformunit.pas"/>
-        <Caret Line="181" Column="10" TopLine="159"/>
+        <Caret Line="87" Column="22" TopLine="72"/>
       </Position21>
       <Position22>
         <Filename Value="ipcontactsformunit.pas"/>
-        <Caret Line="87" Column="22" TopLine="72"/>
+        <Caret Line="63" Column="23" TopLine="48"/>
       </Position22>
       <Position23>
         <Filename Value="ipcontactsformunit.pas"/>
-        <Caret Line="63" Column="23" TopLine="48"/>
+        <Caret Line="29" Column="51" TopLine="13"/>
       </Position23>
       <Position24>
         <Filename Value="ipcontactsformunit.pas"/>
-        <Caret Line="29" Column="51" TopLine="13"/>
+        <Caret Line="27" Column="54" TopLine="11"/>
       </Position24>
       <Position25>
         <Filename Value="ipcontactsformunit.pas"/>
-        <Caret Line="27" Column="54" TopLine="11"/>
+        <Caret Line="182" Column="1" TopLine="151"/>
       </Position25>
       <Position26>
         <Filename Value="ipcontactsformunit.pas"/>
-        <Caret Line="182" Column="1" TopLine="151"/>
+        <Caret Line="189" Column="3" TopLine="164"/>
       </Position26>
       <Position27>
-        <Filename Value="ipcontactsformunit.pas"/>
-        <Caret Line="189" Column="3" TopLine="164"/>
-      </Position27>
-      <Position28>
         <Filename Value="ipeditformunit.pas"/>
         <Caret Line="71" Column="28" TopLine="42"/>
+      </Position27>
+      <Position28>
+        <Filename Value="ipcontactsformunit.pas"/>
+        <Caret Line="106" Column="52" TopLine="92"/>
       </Position28>
       <Position29>
         <Filename Value="ipcontactsformunit.pas"/>
-        <Caret Line="106" Column="52" TopLine="92"/>
-      </Position29>
-      <Position30>
-        <Filename Value="ipcontactsformunit.pas"/>
         <Caret Line="220" Column="3" TopLine="199"/>
-      </Position30>
+      </Position29>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>

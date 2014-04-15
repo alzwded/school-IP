@@ -100,6 +100,7 @@ var
   i: integer;
   ret: TKeyValueArray;
 begin
+  SetLength(ret, 0);
   for i := StringGrid1.FixedRows to StringGrid1.RowCount - 1 do begin
     if initialKeys.IndexOf(StringGrid1.Cells[0, i]) <> -1 then begin
       SetLength(ret, Length(ret) + 1);
@@ -115,6 +116,7 @@ var
   i: integer;
   ret: array of TKeyValuePair;
 begin
+  SetLength(ret, 0);
   for i := StringGrid1.FixedRows to StringGrid1.RowCount - 1 do begin
     if initialKeys.IndexOf(StringGrid1.Cells[0, i]) = -1 then begin
       SetLength(ret, Length(ret) + 1);
