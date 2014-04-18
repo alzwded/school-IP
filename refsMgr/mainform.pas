@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, sqlite3conn, sqldb, db, BufDataset, FileUtil, Forms,
-  Controls, Graphics, Dialogs, DBGrids, Grids, StdCtrls;
+  Controls, Graphics, Dialogs, DBGrids, Grids, StdCtrls, ComCtrls, Clipbrd;
 
 const
   THECAPTION = 'RefsMgr';
@@ -20,6 +20,7 @@ type
     RefreshButton: TButton;
     DeleteButton: TButton;
     SaveButton: TButton;
+    StatusBar1: TStatusBar;
     UndoButton: TButton;
     Datasource1: TDatasource;
     SQLite3Connection1: TSQLite3Connection;
@@ -30,6 +31,9 @@ type
     procedure RefreshButtonClick(Sender: TObject);
     procedure DeleteButtonClick(Sender: TObject);
     procedure SaveButtonClick(Sender: TObject);
+    procedure StatusBar1DblClick(Sender: TObject);
+    procedure Table1SelectCell(Sender: TObject; aCol, aRow: Integer;
+      var CanSelect: Boolean);
     procedure UndoButtonClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure Table1EditingDone(Sender: TObject);
@@ -179,6 +183,17 @@ procedure TForm1.SaveButtonClick(Sender: TObject);
 begin
   SQLTransaction1.CommitRetaining;
   Undirty;
+end;
+
+procedure TForm1.StatusBar1DblClick(Sender: TObject);
+begin
+  Clipboard.AsText := StatusBar1.Panels[0].Text;
+end;
+
+procedure TForm1.Table1SelectCell(Sender: TObject; aCol, aRow: Integer;
+  var CanSelect: Boolean);
+begin
+  StatusBar1.Panels[0].Text := Table1.Cells[aCol, aRow];
 end;
 
 procedure TForm1.UndoButtonClick(Sender: TObject);

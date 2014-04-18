@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 363
+  Left = 334
   Height = 616
-  Top = 204
+  Top = 187
   Width = 709
   Caption = 'RefsMgr'
   ClientHeight = 616
@@ -10,7 +10,7 @@ object Form1: TForm1
   LCLVersion = '0.9.30.4'
   object Table1: TStringGrid
     Left = 0
-    Height = 576
+    Height = 552
     Top = 0
     Width = 713
     Anchors = [akTop, akLeft, akRight, akBottom]
@@ -38,6 +38,7 @@ object Form1: TForm1
     TabOrder = 0
     OnEditingDone = Table1EditingDone
     OnGetEditText = Table1GetEditText
+    OnSelectCell = Table1SelectCell
     ColWidths = (
       177
       177
@@ -48,7 +49,7 @@ object Form1: TForm1
   object AddButton: TButton
     Left = 448
     Height = 25
-    Top = 584
+    Top = 560
     Width = 75
     Anchors = [akRight, akBottom]
     Caption = 'Add'
@@ -58,7 +59,7 @@ object Form1: TForm1
   object RefreshButton: TButton
     Left = 536
     Height = 25
-    Top = 584
+    Top = 560
     Width = 75
     Anchors = [akRight, akBottom]
     Caption = 'Refresh'
@@ -68,7 +69,7 @@ object Form1: TForm1
   object DeleteButton: TButton
     Left = 624
     Height = 25
-    Top = 584
+    Top = 560
     Width = 75
     Anchors = [akRight, akBottom]
     Caption = 'Delete'
@@ -78,7 +79,7 @@ object Form1: TForm1
   object SaveButton: TButton
     Left = 8
     Height = 25
-    Top = 584
+    Top = 560
     Width = 75
     Anchors = [akLeft, akBottom]
     Caption = 'Save'
@@ -89,13 +90,25 @@ object Form1: TForm1
   object UndoButton: TButton
     Left = 96
     Height = 25
-    Top = 584
+    Top = 560
     Width = 75
     Anchors = [akLeft, akBottom]
     Caption = 'Undo'
     Enabled = False
     OnClick = UndoButtonClick
     TabOrder = 5
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 24
+    Top = 592
+    Width = 709
+    Panels = <    
+      item
+        Width = 50
+      end>
+    SimplePanel = False
+    OnDblClick = StatusBar1DblClick
   end
   object SQLite3Connection1: TSQLite3Connection
     Connected = True
