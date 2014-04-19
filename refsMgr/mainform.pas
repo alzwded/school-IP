@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, sqlite3conn, sqldb, db, BufDataset, FileUtil, Forms,
-  Controls, Graphics, Dialogs, DBGrids, Grids, StdCtrls, ComCtrls, Clipbrd;
+  Controls, Graphics, Dialogs, Grids, StdCtrls, ComCtrls, Clipbrd;
 
 const
   THECAPTION = 'RefsMgr';
@@ -75,21 +75,40 @@ end;
 
 procedure TForm1.UpdateGrid;
 var
-  i: integer;
+  i, count: integer;
+  q: TSQLQuery;
 begin
+  (* determine number of rows *)
+  q := TSQLQuery.Create(Self);
+  q.DataBase := SQLite3Connection1;
+  q.Transaction := SQLTransaction1;
+  q.SQL.Add('SELECT COUNT(*) FROM refs ;');
+  q.Active := True;
+  q.First;
+  count := q.Fields[0].AsInteger;
+  q.Active := False;
+  q.Free;
+
   disableUpdate := true;
   SQLQuery1.Active := True;
+  SQLQuery1.Refresh;
   Table1.EditorMode:=true;
   Table1.Columns[0].Title.Caption := 'id';
   Table1.Columns[0].ReadOnly := True;
   Table1.Columns[1].Title.Caption := 'location';
   Table1.Columns[2].Title.Caption := 'localfile';
   Table1.Columns[3].Title.Caption := 'notes';
-  Table1.RowCount := 1 + SQLQuery1.RecordCount;
+  Table1.RowCount := 1 + count;
+  writeln('table size: ', Table1.RowCount);
+  writeln('count: ', count);
   SQLQuery1.First;
   i := 1;
   while not SQLQuery1.EOF do begin
-    writeln(i);
+    writeln('row: ', i);
+    writeln(SQLQuery1.FieldByName('id').AsString, ',',
+    SQLQuery1.FieldByName('location').AsString, ',',
+    SQLQuery1.FieldByName('localfile').AsString, ',',
+    SQLQuery1.FieldByName('notes').AsString);
     Table1.Cells[0, i] := SQLQuery1.FieldByName('id').AsString;
     Table1.Cells[1, i] := SQLQuery1.FieldByName('location').AsString;
     Table1.Cells[2, i] := SQLQuery1.FieldByName('localfile').AsString;
